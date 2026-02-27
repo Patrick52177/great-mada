@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --red: #C8102E;
+  --red-dark: #9e0c23;
+  --gold: #D4A017;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; color: #1a1a1a; background: #fff; overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: #C8102E; border-radius: 3px; }
+
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.5s ease-in-out; }
+.hero-slide.active { opacity: 1; }
+
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.ticker-track { display: flex; white-space: nowrap; animation: ticker 35s linear infinite; }
+
+.tour-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.tour-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+
+.nav-item { position: relative; }
+.nav-item::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #D4A017; transition: width 0.25s ease; }
+.nav-item:hover::after { width: 100%; }
+
+.ribbon { position: absolute; top: 10px; left: 0; color: #fff; font-size: 10px; font-weight: 700; padding: 3px 14px 3px 8px; clip-path: polygon(0 0, 100% 0, 93% 50%, 100% 100%, 0 100%); letter-spacing: 0.5px; z-index: 10; text-transform: uppercase; }
+
+.section-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #C8102E; margin-bottom: 6px; }
+.section-heading { font-family: 'Playfair Display', serif; font-weight: 900; color: #1a1a1a; line-height: 1.15; }
+
+.btn-red { background: #C8102E; color: #fff; font-weight: 600; font-size: 13px; padding: 10px 22px; border-radius: 50px; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; text-decoration: none; }
+.btn-red:hover { background: #9e0c23; transform: scale(1.02); }
+.btn-outline { background: transparent; color: #C8102E; font-weight: 600; font-size: 13px; padding: 10px 22px; border-radius: 50px; border: 1.5px solid #C8102E; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s; text-decoration: none; cursor: pointer; }
+.btn-outline:hover { background: #C8102E; color: #fff; }
