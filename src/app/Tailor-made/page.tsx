@@ -229,78 +229,26 @@ export default function JoinGroupPage() {
           <div className="flex-1">
 
             {!hasFiltered ? (
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8">
-                <div className="bg-gray-700 px-8 py-6">
-                  <h2 className="text-2xl font-extrabold text-white uppercase tracking-wide leading-tight">
-                    Join or Create a Group<br />in Madagascar
-                  </h2>
-                  <p className="text-red-200 font-semibold text-sm uppercase tracking-widest mt-1">
-                    by GMT+3
-                  </p>
-                </div>
+           <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8">
+  <div className="bg-gray-700 px-8 py-6">
+    <h2 className="text-2xl font-extrabold text-white uppercase tracking-wide leading-tight">
+      THE TAILOR-MADE IN MADAGASCAR BY GMT+3
+    </h2>
+    <p className="text-red-200 font-semibold text-sm uppercase tracking-widest mt-1">
+      by GMT+3
+    </p>
+  </div>
 
-                <div className="p-8">
-                  <div className="grid md:grid-cols-2 gap-0 mb-8 rounded-xl overflow-hidden border border-gray-200">
-                    <div className="p-6 bg-red-50 border-r border-gray-200">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                          J
-                        </div>
-                        <h3 className="font-extrabold text-gray-900 text-sm uppercase tracking-widest">
-                          Join a Group
-                        </h3>
-                      </div>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        There are one fixed date departures per month with hotel options{" "}
-                        <span className="font-semibold text-gray-800">
-                          (Luxury, Mid-Range and Budget hotels)
-                        </span>{" "}
-                        that you can choose depending your budget. A minimum of{" "}
-                        <span className="font-semibold text-red-700">4 persons</span> and a maximum of{" "}
-                        <span className="font-semibold text-red-700">12 persons</span> and always with a
-                        private guide/assistant speaking English during the whole tour.
-                      </p>
-                    </div>
-
-                    <div className="p-6 bg-gray-50">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                          C
-                        </div>
-                        <h3 className="font-extrabold text-gray-900 text-sm uppercase tracking-widest">
-                          Create a Group
-                        </h3>
-                      </div>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        You have your own date which is different than the fixed date departure. You can
-                        create your group based on your travel dates to have other traveler's with you
-                        during the tour. The price will be{" "}
-                        <span className="font-semibold text-gray-800">cheap and competitive</span>.{" "}
-                        <em className="text-gray-500">
-                          Tour examples (The RN7 to Berenty or Andasibe and the Tsingy of Bemaraha
-                          National Park)
-                        </em>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4 bg-amber-50 border border-amber-200 rounded-xl p-5">
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      The{" "}
-                      <span className="font-semibold text-gray-800">Join or Create a group</span> is
-                      planned and operated on a{" "}
-                      <span className="font-semibold text-gray-800">twin-share basis</span>, meaning
-                      that the standard cost is based either on individual travelers sharing
-                      accommodation with another group member of the same sex, or people who book
-                      together sharing accommodation. On this particular tour,{" "}
-                      <span className="font-semibold text-gray-800">GMT+3</span> is pleased to be able
-                      to offer customers the option of pre-booking a{" "}
-                      <span className="font-semibold text-gray-800">guaranteed single room</span> for
-                      each night of the tour.
-                    </p>
-                  </div>
-                </div>
-              </div>
+  <div className="p-8">
+    <div className="flex gap-4 bg-amber-50 border border-amber-200 rounded-xl p-5">
+      <p className="text-gray-600 text-sm leading-relaxed">
+        Below are the list of our Tailor-made tours that you can customize depending on your needs. 
+        You can send us your design itinerary and GMT+3's teams will assist you till you get the lowest 
+        price guarantee. Stay in touch with us because we are always available to you 24 hours a day.
+      </p>
+    </div>
+  </div>
+</div>
 
             ) : (
               <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 mb-8">

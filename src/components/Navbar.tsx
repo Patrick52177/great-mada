@@ -6,7 +6,7 @@ import Image from "next/image";
 const NAV = [
   { label: "Home", href: "/" },
   { label: "Join a Group", href: "/Join-group" },
-  { label: "Tailor-made", href: "/tailor-made" },
+  { label: "Tailor-made", href: "/Tailor-made" },
   { label: "Day Trip", href: "/day-trips" },
   { label: "Best Selling Tours", href: "/best-selling" },
   { label: "Low Cost Tours", href: "/low-cost" },
