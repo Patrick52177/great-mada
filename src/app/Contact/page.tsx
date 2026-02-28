@@ -8,6 +8,7 @@ import Select, { components } from "react-select";
 import ReactCountryFlag from "react-country-flag";
 import { countries } from "../utils/countries";
 
+console.log("Countries:", countries);
 // ── Option pays pour react-select ──
 const CountryOption = (props: any) => (
   <components.Option {...props}>
@@ -53,11 +54,24 @@ const selectStyles = {
   }),
 };
 
+const CountrySingleValue = (props: any) => (
+  <components.SingleValue {...props}>
+    <div className="flex items-center gap-2">
+      <ReactCountryFlag
+        countryCode={props.data.value} // MG, US, FR...
+        svg
+        style={{ width: "20px", height: "20px" }}
+      />
+      <span>{props.data.label}</span>
+    </div>
+  </components.SingleValue>
+);
+
 // Classes Tailwind pour les inputs
 const inputClass =
   "w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm placeholder-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition";
 
-export default function TailorMadePage() {
+export default function ContactPage() {
   const [priceFilter, setPriceFilter] = useState(2000);
   const [dayFilter, setDayFilter] = useState(15);
   const [searchText, setSearchText] = useState("");
@@ -179,22 +193,38 @@ export default function TailorMadePage() {
           </div>
 
           {/* RIGHT COLUMN */}
-        <div className="p-8 bg-gray-50">
-                <form className="space-y-6">
+          <div className="flex-1">
+            <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
+              {/* HEADER */}
+              <div className="relative bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 px-8 py-10 overflow-hidden">
+                <div className="absolute -top-8 -right-8 w-36 h-36 bg-red-600/20 rounded-full animate-pulse" />
+                <div className="absolute -bottom-10 -left-6 w-28 h-28 bg-red-600/10 rounded-full" />
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-1.5 h-8 bg-red-500 rounded-full" />
+                    <h2 className="text-3xl font-extrabold text-white uppercase tracking-wide">Contact Form</h2>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    GMT+3 (Great Madagascar Tours) thanks you for your interest and your visit on our website. Complete the enquiry form below and GMT+3 will reply with the best offers.
+                  </p>
+                  <div className="flex items-center gap-2 mt-5 bg-red-600/20 border border-red-500/30 rounded-2xl px-4 py-2 w-fit">
+                    <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse" />
+                    <p className="text-green-300 text-xs font-semibold tracking-wide">Available 24h/24 · 7 days/week</p>
+                  </div>
+                </div>
+              </div>
 
-                  {/* ── SECTION 1 : Personal Information ── */}
+              {/* FORMULAIRE COMPLET */}
+              <div className="p-8 bg-gray-50">
+                <form className="space-y-6">
+                  {/* ===== SECTION 1 : Personal Information ===== */}
                   <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
                     <div className="flex items-center gap-3 px-6 py-4 border-b border-gray-100">
-                      <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                        1
-                      </div>
-                      <h3 className="font-bold text-gray-800 text-sm uppercase tracking-widest">
-                        Personal Information
-                      </h3>
+                      <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</div>
+                      <h3 className="font-bold text-gray-800 text-sm uppercase tracking-widest">Personal Information</h3>
                     </div>
 
                     <div className="p-6 space-y-4">
-                      {/* Civility + Surname + Given Names */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="flex flex-col gap-1.5">
                           <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
@@ -211,50 +241,26 @@ export default function TailorMadePage() {
                           <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                             Surname <span className="text-red-500">*</span>
                           </label>
-                          <input
-                            type="text"
-                            placeholder="Your surname"
-                            className={inputClass}
-                          />
+                          <input type="text" placeholder="Your surname" className={inputClass} />
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                             Given Names <span className="text-red-500">*</span>
                           </label>
-                          <input
-                            type="text"
-                            placeholder="Your given names"
-                            className={inputClass}
-                          />
+                          <input type="text" placeholder="Your given names" className={inputClass} />
                         </div>
                       </div>
 
-                      {/* Email + Phone */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="flex flex-col gap-1.5">
                           <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                             Email <span className="text-red-500">*</span>
                           </label>
                           <div className="relative">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                              />
+                            <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            <input
-                              type="email"
-                              placeholder="your@email.com"
-                              className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-sm placeholder-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
-                            />
+                            <input type="email" placeholder="your@email.com" className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-sm placeholder-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"/>
                           </div>
                         </div>
                         <div className="flex flex-col gap-1.5">
@@ -262,53 +268,42 @@ export default function TailorMadePage() {
                             Phone
                           </label>
                           <div className="relative">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                              />
+                            <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
-                            <input
-                              type="tel"
-                              placeholder="+1 234 567 890"
-                              className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-sm placeholder-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
-                            />
+                            <input type="tel" placeholder="+1 234 567 890" className="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-sm placeholder-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"/>
                           </div>
                         </div>
                       </div>
 
-                      {/* Country + Preferred Call Time */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="flex flex-col gap-1.5">
                           <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                             Country
                           </label>
                           <Select
-                            options={countries}
-                            value={selectedCountry}
-                            onChange={setSelectedCountry}
-                            components={{ Option: CountryOption }}
-                            placeholder="Select your country..."
-                            styles={selectStyles}
-                          />
+  options={countries}
+  value={selectedCountry}
+  onChange={(option: any) => setSelectedCountry(option)}
+  components={{
+    Option: CountryOption,
+    SingleValue: CountrySingleValue
+  }}
+  placeholder="Select your country..."
+  styles={{
+    ...selectStyles,
+    menuPortal: (base: any) => ({ ...base, zIndex: 9999 })
+  }}
+  menuPortalTarget={typeof window !== "undefined" ? document.body : null}
+  menuPosition="fixed"
+  isClearable
+/>
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                             Preferred Call Time
                           </label>
-                          <select
-                            value={preferredCallTime}
-                            onChange={(e) => setPreferredCallTime(e.target.value)}
-                            className={inputClass}
-                          >
+                          <select value={preferredCallTime} onChange={e => setPreferredCallTime(e.target.value)} className={inputClass}>
                             <option value="">Please select...</option>
                             <option>Morning</option>
                             <option>Afternoon</option>
@@ -319,173 +314,53 @@ export default function TailorMadePage() {
                     </div>
                   </div>
 
-                  {/* ── SECTION 2 : Travel Details ── */}
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                  {/* ===== SECTION 2 : Travel Details ===== */}
+                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mt-4">
                     <div className="flex items-center gap-3 px-6 py-4 border-b border-gray-100">
-                      <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                        2
-                      </div>
-                      <h3 className="font-bold text-gray-800 text-sm uppercase tracking-widest">
-                        Travel Details
-                      </h3>
+                      <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</div>
+                      <h3 className="font-bold text-gray-800 text-sm uppercase tracking-widest">Travel Details</h3>
                     </div>
 
                     <div className="p-6 space-y-4">
-                      {/* Adults + Children + Infants */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                            Adults <span className="text-red-500">*</span>
-                          </label>
-                          <input
-                            type="number" min={1} defaultValue={1}
-                            className={inputClass}
-                          />
+                          <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Departure Date</label>
+                          <input type="date" className={inputClass}/>
                         </div>
                         <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                            Children (3–12 y.o)
-                          </label>
-                          <input
-                            type="number" min={0} defaultValue={0}
-                            className={inputClass}
-                          />
+                          <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Return Date</label>
+                          <input type="date" className={inputClass}/>
                         </div>
                         <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                            Infants (&lt; 2 y.o)
-                          </label>
-                          <input
-                            type="number" min={0} defaultValue={0}
-                            className={inputClass}
-                          />
+                          <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Number of Travelers</label>
+                          <input type="number" min={1} defaultValue={1} className={inputClass}/>
                         </div>
                       </div>
 
-                      {/* Hotel Option + Arrival + Departure */}
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                            Hotel Option <span className="text-red-500">*</span>
-                          </label>
-                          <select className={inputClass}>
-                            <option value="">All Options</option>
-                            <option>Budget</option>
-                            <option>Comfort</option>
-                            <option>Luxury</option>
-                          </select>
-                        </div>
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                            Arrival Date <span className="text-red-500">*</span>
-                          </label>
-                          <input type="date" className={inputClass} />
-                        </div>
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                            Departure Date <span className="text-red-500">*</span>
-                          </label>
-                          <input type="date" className={inputClass} />
-                        </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Special Requests</label>
+                        <textarea placeholder="Any special requests..." className={inputClass + " h-24 resize-none"}></textarea>
                       </div>
                     </div>
                   </div>
 
-                  {/* ── SECTION 3 : Message ── */}
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div className="flex items-center gap-3 px-6 py-4 border-b border-gray-100">
-                      <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                        3
-                      </div>
-                      <h3 className="font-bold text-gray-800 text-sm uppercase tracking-widest">
-                        Your Message
-                      </h3>
-                    </div>
-                    <div className="p-6">
-                      <textarea
-                        rows={5}
-                        placeholder="Tell us about your dream trip, special requests, or any questions..."
-                        className={`${inputClass} resize-none`}
-                      />
-                    </div>
+                  {/* ===== MESSAGE ===== */}
+                  <div className="flex flex-col gap-1.5 mt-4">
+                    <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Message</label>
+                    <textarea placeholder="Your message..." className={inputClass + " h-32 resize-none"}></textarea>
                   </div>
 
-                  {/* ── SUBMIT ── */}
-                  <div className="pt-2">
-                    <p className="text-xs text-gray-400 mb-4">
-                      Fields marked with{" "}
-                      <span className="text-red-500 font-bold">*</span> are required.
-                    </p>
-                    <button
-                      type="submit"
-                      className="w-full bg-red-600 text-white py-4 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-red-700 active:scale-95 transition-all duration-200 shadow-lg hover:shadow-red-200"
-                    >
-                      Send My Enquiry →
-                    </button>
-
-                    {/* Badges de confiance */}
-                    <div className="flex items-center justify-center gap-6 mt-5 flex-wrap">
-                      <div className="flex items-center gap-1.5 text-xs text-gray-400">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-4 h-4 text-green-500"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                          />
-                        </svg>
-                        Secure & Private
-                      </div>
-                      <div className="flex items-center gap-1.5 text-xs text-gray-400">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-4 h-4 text-blue-500"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                        Reply within 24h
-                      </div>
-                      <div className="flex items-center gap-1.5 text-xs text-gray-400">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-4 h-4 text-red-500"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                          />
-                        </svg>
-                        No commitment
-                      </div>
-                    </div>
-                  </div>
-
+                  {/* ===== SUBMIT BUTTON ===== */}
+                  <button type="submit" className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition w-full mt-4">
+                    Submit
+                  </button>
                 </form>
               </div>
-            </div>
-          
 
-        
-        
+            </div>
+          </div>
+
+        </div>
       </main>
 
       <Footer />
