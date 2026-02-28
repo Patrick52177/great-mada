@@ -7,11 +7,11 @@ const NAV = [
   { label: "Home", href: "/" },
   { label: "Join a Group", href: "/Join-group" },
   { label: "Tailor-made", href: "/Tailor-made" },
-  { label: "Day Trip", href: "/day-trips" },
-  { label: "Best Selling Tours", href: "/best-selling" },
-  { label: "Low Cost Tours", href: "/low-cost" },
-  { label: "Big Deals", href: "/big-deals" },
-  { label: "Contact", href: "/contact" },
+  { label: "Day Trip", href: "/Day-trip" },
+  { label: "Best Selling Tours", href: "/Best-selling" },
+  { label: "Low Cost Tours", href: "/Low-cost" },
+  { label: "Big Deals", href: "/Big-deals" },
+  { label: "Contact", href: "/Contact" },
 ];
 
 const INNER = "0 clamp(16px, 4vw, 40px)";

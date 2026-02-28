@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { TOURS, Tour } from "./tour";
 
-export default function TailorMadePage() {
+export default function BestSellingPage() {
   const [priceFilter, setPriceFilter] = useState(2000);
   const [dayFilter, setDayFilter] = useState(15);
   const [searchText, setSearchText] = useState("");
@@ -232,7 +232,8 @@ export default function TailorMadePage() {
            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8">
   <div className="bg-gray-700 px-8 py-6">
     <h2 className="text-2xl font-extrabold text-white uppercase tracking-wide leading-tight">
-      THE TAILOR-MADE IN MADAGASCAR 
+      
+             THE BEST SELLING TOURS IN MADAGASCAR 
     </h2>
     <p className="text-red-200 font-semibold text-sm uppercase tracking-widest mt-1">
       by GMT+3
@@ -242,9 +243,15 @@ export default function TailorMadePage() {
   <div className="p-8">
     <div className="flex gap-4 bg-amber-50 border border-amber-200 rounded-xl p-5">
       <p className="text-gray-600 text-sm leading-relaxed">
-        Below are the list of our Tailor-made tours that you can customize depending on your needs. 
-        You can send us your design itinerary and GMT+3's teams will assist you till you get the lowest 
-        price guarantee. Stay in touch with us because we are always available to you 24 hours a day.
+        Welcome to GMT+3 "BEST SELLING TOURS IN MADAGASCAR” pages, you will find here 
+        all the best tours which are ameliorated that everyone can do it without difficulties,
+        they will give you the ideas what is the best to do that you have a great trip in Madagascar.
+        In the same time, you can have the real feedback from the clients whom already done those trip.
+        More than 80% of our clients requested and took to discover Madagascar in the best way.
+         It can be a private or group (family and friends) tour depending on you and the hotel options
+          (Luxury, Mid-Range and Budget hotels) that you can choose depending your budget. Please note 
+          that those hotels suggested are the best of the hotels in each area but if you would like 
+          to modify; it will be a pleasure to amend it.
       </p>
     </div>
   </div>

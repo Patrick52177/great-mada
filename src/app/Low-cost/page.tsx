@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { TOURS, Tour } from "./tour";
 
-export default function TailorMadePage() {
+export default function LowCostPage() {
   const [priceFilter, setPriceFilter] = useState(2000);
   const [dayFilter, setDayFilter] = useState(15);
   const [searchText, setSearchText] = useState("");
@@ -232,19 +232,25 @@ export default function TailorMadePage() {
            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8">
   <div className="bg-gray-700 px-8 py-6">
     <h2 className="text-2xl font-extrabold text-white uppercase tracking-wide leading-tight">
-      THE TAILOR-MADE IN MADAGASCAR 
+      THE LOW COST TOURS IN MADAGASCAR
     </h2>
     <p className="text-red-200 font-semibold text-sm uppercase tracking-widest mt-1">
-      by GMT+3
+      by GMT+3 MADAGASCAR TOURS
     </p>
   </div>
 
   <div className="p-8">
     <div className="flex gap-4 bg-amber-50 border border-amber-200 rounded-xl p-5">
       <p className="text-gray-600 text-sm leading-relaxed">
-        Below are the list of our Tailor-made tours that you can customize depending on your needs. 
-        You can send us your design itinerary and GMT+3's teams will assist you till you get the lowest 
-        price guarantee. Stay in touch with us because we are always available to you 24 hours a day.
+       Welcome to GMT+3 “LOW COST TOURS IN MADAGASCAR”, this page is not only dedicated 
+       to the backpackers but for all travelers. You will realize that travelling in Madagascar
+        is not that expensive like most of us think. Most of you would like to spend more time 
+        but the budget is limited and we are happy to assist you to realize your dream. 
+        Everyone knows that the price of your holidays depends on the way that you would like 
+        discover it by choosing your Tour operators; the type of your transportations and hotels. 
+        The aim is to keep the price cheap and discovering the best highlights of the island including
+         meeting of local peoples to know more about their daily life; cultural; a real education to 
+         make your holidays more memorable with GMT+3 staffs. Just be ready for the real adventure.
       </p>
     </div>
   </div>

@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { TOURS, Tour } from "./tour";
 
-export default function TailorMadePage() {
+export default function BigdealsPage() {
   const [priceFilter, setPriceFilter] = useState(2000);
   const [dayFilter, setDayFilter] = useState(15);
   const [searchText, setSearchText] = useState("");
@@ -232,19 +232,19 @@ export default function TailorMadePage() {
            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8">
   <div className="bg-gray-700 px-8 py-6">
     <h2 className="text-2xl font-extrabold text-white uppercase tracking-wide leading-tight">
-      THE TAILOR-MADE IN MADAGASCAR 
+      BIG DEALS IN MADAGASCAR 
     </h2>
     <p className="text-red-200 font-semibold text-sm uppercase tracking-widest mt-1">
-      by GMT+3
+      by GMT+3 GREAT MADAGASCAR TOURS
     </p>
   </div>
 
   <div className="p-8">
     <div className="flex gap-4 bg-amber-50 border border-amber-200 rounded-xl p-5">
       <p className="text-gray-600 text-sm leading-relaxed">
-        Below are the list of our Tailor-made tours that you can customize depending on your needs. 
-        You can send us your design itinerary and GMT+3's teams will assist you till you get the lowest 
-        price guarantee. Stay in touch with us because we are always available to you 24 hours a day.
+       Welcome to GMT+3 "BIG DEALS” page, you will find here all promotions (hotels & Tours)
+        to make your holidays in Madagascar more memorable. GMT+3 is pleased to give you the 
+        lowest price guarantee
       </p>
     </div>
   </div>

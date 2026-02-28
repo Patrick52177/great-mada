@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { TOURS, Tour } from "./tour";
 
-export default function TailorMadePage() {
+export default function DayTripPage() {
   const [priceFilter, setPriceFilter] = useState(2000);
   const [dayFilter, setDayFilter] = useState(15);
   const [searchText, setSearchText] = useState("");
@@ -232,7 +232,7 @@ export default function TailorMadePage() {
            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8">
   <div className="bg-gray-700 px-8 py-6">
     <h2 className="text-2xl font-extrabold text-white uppercase tracking-wide leading-tight">
-      THE TAILOR-MADE IN MADAGASCAR 
+      DAY TRIP IN ANTANANARIVO
     </h2>
     <p className="text-red-200 font-semibold text-sm uppercase tracking-widest mt-1">
       by GMT+3
@@ -242,13 +242,23 @@ export default function TailorMadePage() {
   <div className="p-8">
     <div className="flex gap-4 bg-amber-50 border border-amber-200 rounded-xl p-5">
       <p className="text-gray-600 text-sm leading-relaxed">
-        Below are the list of our Tailor-made tours that you can customize depending on your needs. 
-        You can send us your design itinerary and GMT+3's teams will assist you till you get the lowest 
-        price guarantee. Stay in touch with us because we are always available to you 24 hours a day.
+        Welcome to GMT+3 "ANTANANARIVO DAY TOURS” pages, you will find here all 
+        the best day tours which are ameliorated that everyone can do it without difficulties, 
+        they will give you the ideas what is the best to do in Antananarivo and its surrounding. 
+        GMT+3 will make you know the real history of Antananarivo with our professional historian 
+        and cultural tour guide
       </p>
     </div>
   </div>
+
+  <div className="mt-6 overflow-hidden">
+  <div className="whitespace-nowrap animate-scroll text-red-600 font-semibold text-sm">
+    Nb: Please note that if your hotel is not in the city center, there will be a supplement. Please update.
+  </div>
 </div>
+</div>
+
+
 
             ) : (
               <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 mb-8">
