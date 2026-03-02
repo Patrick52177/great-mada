@@ -6,8 +6,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { TOURS, Tour } from "./tour";
+import { useRouter } from "next/navigation";
+
 
 export default function JoinGroupPage() {
+  
+const router = useRouter();
   const [priceFilter, setPriceFilter] = useState(2000);
   const [dayFilter, setDayFilter] = useState(15);
   const [searchText, setSearchText] = useState("");
@@ -399,9 +403,12 @@ export default function JoinGroupPage() {
                         <div className="text-sm text-gray-500">
                           Secure booking • Instant confirmation • Professional local guide
                         </div>
-                        <button className="bg-red-600 text-white px-8 py-4 rounded-2xl font-semibold text-sm tracking-wide hover:bg-red-700 hover:shadow-xl transition duration-300">
-                          Read more
-                        </button>
+                       <button
+  onClick={() => router.push(`/Join-group/${tour.id}`)}
+  className="bg-red-600 text-white px-8 py-4 rounded-2xl font-semibold text-sm tracking-wide hover:bg-red-700 hover:shadow-xl transition duration-300"
+>
+  Read more
+</button>
                       </div>
                     </div>
                   </div>
